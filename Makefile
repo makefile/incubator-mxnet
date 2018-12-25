@@ -194,6 +194,7 @@ ifeq ($(USE_LAPACK), 1)
 	endif
 	ifeq ($(USE_BLAS),$(filter $(USE_BLAS),blas openblas atlas mkl))
 		LDFLAGS += -llapack
+		#LDFLAGS += liblapack.a
 	endif
 	CFLAGS += -DMXNET_USE_LAPACK
 endif
@@ -201,6 +202,7 @@ endif
 ifeq ($(USE_CUDNN), 1)
 	CFLAGS += -DMSHADOW_USE_CUDNN=1
 	LDFLAGS += -lcudnn
+	#LDFLAGS += libcudnn_static.a
 endif
 
 # whether to use F16C instruction set extension for fast fp16 compute on CPU
