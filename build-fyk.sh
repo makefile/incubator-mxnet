@@ -1,6 +1,7 @@
 #make clean_all
 make -j8 \
     USE_OPENCV=0 \
+    USE_GPERFOOLS=0 USE_JEMALLOC=0 \
     USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda-9.2 USE_CUDNN=1 \
     USE_SIGNAL_HANDLER=1 \
     USE_DIST_KVSTORE=1 \
